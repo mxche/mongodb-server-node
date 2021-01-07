@@ -1,0 +1,12 @@
+{
+  "port": 9088,
+  "mongodbURL": "mongodb://49.235.126.251:27017",
+  "mongodbOptions": {
+    "useNewUrlParser": true,
+    "useUnifiedTopology": true,
+    "useCreateIndex": true,
+    "useFindAndModify": false,
+    "autoIndex": false,
+    "poolSize": 10
+  }
+}
