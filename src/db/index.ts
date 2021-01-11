@@ -4,18 +4,19 @@
  * desc:链接monog服务器
  */
 import mongoos from "mongoose"
+import 'dotenv/config'
 import config from "../config.json"
 export const init = () => {
-  mongoos.connect(config.mongodbURL, config.mongodbOptions).catch((error) => {
+  mongoos.connect(process.env.MONGP_URL, config.mongodbOptions).catch((error) => {
     console.log("connect error message" + error)
   })
   mongoos.connection.on("error", (error) => {
     console.log("mongodb error:" + error)
   })
   mongoos.connection.on("connected", () => {
-    console.log("connected to mongodb  success:" + config.mongodbURL)
+    console.log("connected to mongodb  success:" + process.env.MONGP_URL)
   })
   mongoos.connection.on("disconnected", () => {
-    console.log("mongodb disconnected:" + config.mongodbURL)
+    console.log("mongodb disconnected:" + process.env.MONGP_URL)
   })
 }
