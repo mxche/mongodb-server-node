@@ -42,7 +42,6 @@ const loginMudule = async (req, res, next) => {
   let { userName, password } = req.body
   try {
     let users = await User.login(userName, password)
-  // console.log(users, "users")
   if (!users) {
     throw new HTTPException(StatusCodes.UNAUTHORIZED, "登录失败，账号或者密码错误！",)
   } else {

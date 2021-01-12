@@ -90,6 +90,6 @@ UserSachema.methods.getToken = function (this: UserDocument) {
 }
 
 export const User: UserModel = model<UserDocument, UserModel>(
-  "user",
+  "User",
   UserSachema
 )
